@@ -1,16 +1,19 @@
-/* TEST – MAKE IT OBVIOUSLY BLUE */
+/* TEST – FORCE VISIBLE CHANGE (WUFOO 2018 THEME) */
 
-body {
+/* The page wrapper is #public on <body id="public"> */
+html body#public {
   background: #0066ff !important;
 }
 
-#container {
-  background: #ffffff !important;
-  border: 8px solid #0066ff !important;
+/* Your form container exists as #container */
+html body#public #container {
+  display: block !important;          /* just for testing */
+  border: 14px solid #0066ff !important;
 }
 
-.wufoo input.text,
-.wufoo textarea,
-.wufoo select {
-  border: 3px solid #0066ff !important;
+/* Inputs in your HTML are class="field text ..." */
+html body#public .wufoo input.field,
+html body#public .wufoo select.field,
+html body#public .wufoo textarea.field {
+  border: 4px solid #0066ff !important;
 }
