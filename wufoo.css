@@ -1,101 +1,16 @@
-/* ================================= */
-/* GELMAN – CLEAN MODERN CARD STYLE  */
-/* ================================= */
+/* TEST – MAKE IT OBVIOUSLY BLUE */
 
-/* Page background */
 body {
-  background: #f4f6f8 !important;
+  background: #0066ff !important;
 }
 
-/* Main container as clean white card */
 #container {
   background: #ffffff !important;
-  max-width: 860px !important;
-  margin: 40px auto !important;
-  padding: 30px 35px !important;
-  border-radius: 12px !important;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.06) !important;
+  border: 8px solid #0066ff !important;
 }
 
-/* Remove old gray Wufoo styling */
-.wufoo {
-  background: transparent !important;
-  border: none !important;
-}
-
-/* Logo spacing */
-#logo {
-  margin-bottom: 20px !important;
-}
-
-#logo img {
-  max-height: 65px !important;
-}
-
-/* Section titles */
-.wufoo h3 {
-  font-size: 18px !important;
-  font-weight: 600 !important;
-  margin: 25px 0 8px 0 !important;
-  border-bottom: 1px solid #e6e8eb !important;
-  padding-bottom: 6px !important;
-}
-
-/* Field spacing */
-.wufoo li {
-  margin-bottom: 14px !important;
-}
-
-/* Labels */
-.wufoo label.desc {
-  font-size: 14px !important;
-  font-weight: 600 !important;
-  margin-bottom: 6px !important;
-}
-
-/* Modern inputs */
 .wufoo input.text,
 .wufoo textarea,
 .wufoo select {
-  padding: 12px 14px !important;
-  font-size: 14px !important;
-  border-radius: 8px !important;
-  border: 1px solid #d0d5dd !important;
-  background: #ffffff !important;
-  transition: all 0.2s ease !important;
-}
-
-/* Hover */
-.wufoo input.text:hover,
-.wufoo textarea:hover,
-.wufoo select:hover {
-  border-color: #a0a4ab !important;
-}
-
-/* Focus */
-.wufoo input.text:focus,
-.wufoo textarea:focus,
-.wufoo select:focus {
-  border-color: #1f4e79 !important;
-  box-shadow: 0 0 0 3px rgba(31, 78, 121, 0.12) !important;
-  outline: none !important;
-}
-
-/* Textarea height */
-.wufoo textarea {
-  min-height: 90px !important;
-}
-
-/* Submit button */
-.wufoo input.btTxt {
-  padding: 12px 26px !important;
-  font-size: 14px !important;
-  font-weight: 600 !important;
-  border-radius: 8px !important;
-  transition: all 0.2s ease !important;
-}
-
-/* Button hover */
-.wufoo input.btTxt:hover {
-  transform: translateY(-1px);
+  border: 3px solid #0066ff !important;
 }
