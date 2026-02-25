@@ -1,8 +1,9 @@
 /* =========================================================
    GELMAN – POLISHED MODERN + TIGHT WUFOO (redesigned-theme-2018)
+   Fixes: spacing, modern look, checkbox/radio alignment, date sizing
    ========================================================= */
 
-/* ---------- Layout / page ---------- */
+/* ---------- Page / container ---------- */
 html body#public {
   background: #f4f6f8 !important;
 }
@@ -18,7 +19,7 @@ html body#public #container {
   box-shadow: 0 14px 40px rgba(16, 24, 40, 0.08) !important;
 }
 
-/* Ensure the form itself isn't drawing an extra box */
+/* Remove any extra form box styling */
 html body#public #container .wufoo,
 html body#public #container form.wufoo {
   background: transparent !important;
@@ -29,7 +30,6 @@ html body#public #container form.wufoo {
 html body#public #logo {
   margin: 0 0 14px 0 !important;
 }
-
 html body#public #logo img {
   max-height: 64px !important;
   height: auto !important;
@@ -40,7 +40,6 @@ html body#public #header.info {
   margin: 0 0 18px 0 !important;
   border-bottom: 1px solid #e7eaee !important;
 }
-
 html body#public #header.info h2 {
   font-size: 22px !important;
   font-weight: 700 !important;
@@ -67,22 +66,23 @@ html body#public .wufoo legend.desc {
   margin: 0 0 6px 0 !important;
 }
 
-/* Required star slightly toned */
+/* Required star */
 html body#public .wufoo .req {
   color: #b42318 !important;
 }
 
-/* Helper / sub-label text */
+/* Helper/sub-label text */
 html body#public .wufoo li div label,
 html body#public .wufoo li span label,
 html body#public .wufoo .instruct,
 html body#public .wufoo .instruct small,
-html body#public .wufoo em.currently {
+html body#public .wufoo em.currently,
+html body#public .wufoo .currently {
   font-size: 12px !important;
   color: #667085 !important;
 }
 
-/* ---------- Inputs (modern) ---------- */
+/* ---------- Inputs (modern + consistent) ---------- */
 html body#public .wufoo input.field,
 html body#public .wufoo select.field,
 html body#public .wufoo textarea.field {
@@ -99,14 +99,9 @@ html body#public .wufoo textarea.field {
   transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease !important;
 }
 
-/* Dropdown arrow / height consistency */
+/* Dropdown height consistency */
 html body#public .wufoo select.field {
-  height: 42px !important;
-}
-
-/* Make number fields not look cramped */
-html body#public .wufoo input.nospin {
-  padding-right: 12px !important;
+  height: 40px !important;
 }
 
 /* Hover */
@@ -120,64 +115,116 @@ html body#public .wufoo textarea.field:hover {
 html body#public .wufoo input.field:focus,
 html body#public .wufoo select.field:focus,
 html body#public .wufoo textarea.field:focus {
-  border-color: #1f4e79 !important; /* subtle navy */
+  border-color: #1f4e79 !important;
   box-shadow: 0 0 0 4px rgba(31, 78, 121, 0.14) !important;
   outline: none !important;
 }
 
-/* Textareas: keep them reasonable */
+/* Textareas: keep reasonable */
 html body#public .wufoo textarea.field {
   min-height: 90px !important;
 }
 
-/* ---------- Special field types ---------- */
+/* File upload: keep clean */
+html body#public .wufoo input.file {
+  padding: 8px 0 !important;
+  border: none !important;
+  background: transparent !important;
+}
 
-/* Currency field: align symbols nicely, reduce awkward spacing */
+/* ---------- Currency / symbols ---------- */
 html body#public .wufoo li .symbol {
   color: #667085 !important;
   font-weight: 600 !important;
   margin-right: 6px !important;
 }
 
-/* Date fields: tighten and modernize */
-html body#public .wufoo li.date span {
-  margin-right: 6px !important;
-}
-html body#public .wufoo li.date input.field {
-  width: 72px !important;
-  text-align: center !important;
-  padding: 10px 10px !important;
-}
-html body#public .wufoo li.date input#Field3 {
-  width: 96px !important; /* YYYY */
-}
-
-/* File upload: make it cleaner */
-html body#public .wufoo input.file {
-  padding: 10px 0 !important;
-  border: none !important;
-  background: transparent !important;
-}
-
-/* Radio / checkbox spacing */
+/* ---------- Checkbox / Radio alignment (FIXED) ---------- */
+/* Wrap each option into a neat aligned row */
 html body#public .wufoo fieldset > div > span,
 html body#public .wufoo .subfield {
   display: inline-flex !important;
   align-items: center !important;
-  margin-right: 16px !important;
-  margin-bottom: 8px !important;
+  gap: 8px !important;
+  margin-right: 18px !important;
+  margin-bottom: 10px !important;
 }
 
-html body#public .wufoo input.radio,
-html body#public .wufoo input.checkbox {
-  transform: translateY(1px) !important;
-  margin-right: 8px !important;
+/* Choice label itself aligns to center */
+html body#public .wufoo label.choice {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  line-height: 1.2 !important;
+  margin: 0 !important;
+  padding: 6px 8px !important;      /* nice click target */
+  border-radius: 8px !important;
 }
 
-/* Make choice text modern */
-html body#public .wufoo label.choice .choice__text {
-  font-size: 14px !important;
-  color: #101828 !important;
+/* Inputs aligned with text */
+html body#public .wufoo input.checkbox,
+html body#public .wufoo input.radio {
+  margin: 0 !important;
+  position: relative !important;
+  top: 0 !important;
+  transform: none !important;
+}
+
+/* Ensure text wraps nicely without drifting */
+html body#public .wufoo label.choice .choice__text,
+html body#public .wufoo label.choice span {
+  display: inline-block !important;
+  line-height: 1.2 !important;
+  white-space: normal !important;
+}
+
+/* Subtle hover for options */
+html body#public .wufoo label.choice:hover {
+  background: rgba(16, 24, 40, 0.04) !important;
+}
+
+/* ---------- Date fields (MM / DD / YYYY) – smaller + aligned ---------- */
+html body#public .wufoo li.date span {
+  display: inline-flex !important;
+  align-items: center !important;
+  margin-right: 6px !important;
+}
+
+html body#public .wufoo li.date input.field {
+  padding: 8px 8px !important;
+  border-radius: 8px !important;
+  font-size: 13px !important;
+  height: 34px !important;
+  line-height: 34px !important;
+  text-align: center !important;
+}
+
+/* MM and DD */
+html body#public .wufoo li.date input#Field3-1,
+html body#public .wufoo li.date input#Field3-2 {
+  width: 46px !important;
+}
+
+/* YYYY */
+html body#public .wufoo li.date input#Field3 {
+  width: 70px !important;
+}
+
+/* Date separators slightly subdued */
+html body#public .wufoo li.date .symbol {
+  margin: 0 6px !important;
+  font-weight: 700 !important;
+  color: #98a2b3 !important;
+}
+
+/* Calendar icon alignment */
+html body#public .wufoo li.date #cal3 {
+  margin-left: 8px !important;
+}
+html body#public .wufoo li.date img.datepicker {
+  width: 18px !important;
+  height: 18px !important;
+  opacity: 0.75 !important;
 }
 
 /* ---------- Submit button ---------- */
@@ -226,13 +273,12 @@ html body#public .wufoo input#saveForm.btTxt.submit:active {
   }
 
   html body#public .wufoo select.field {
-    height: 44px !important;
+    height: 42px !important;
   }
 
+  /* Date fields slightly larger on mobile for tapping */
   html body#public .wufoo li.date input.field {
-    width: 64px !important;
-  }
-  html body#public .wufoo li.date input#Field3 {
-    width: 88px !important;
+    height: 36px !important;
+    line-height: 36px !important;
   }
 }
